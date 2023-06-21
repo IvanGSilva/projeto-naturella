@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+@font-face {
+    font-family: custom;
+    src: url(fontes/Gistesy.ttf);
+}
 :root{
     scroll-behavior: smooth;
     --verde:#9FC7AA;
@@ -10,9 +14,9 @@
     --bege: #F0E9D9;
 }
 .header{
-    background-image: url(img/tile.jpeg);
+    background-image: url(img/tile_new.jpeg);
     background-repeat: round;
-    font-family: custom;
+    font-family: 'custom', sans-serif;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -27,16 +31,48 @@
 .logo img{
     border-radius: 100%;
 }
-@font-face {
-    font-family: custom;
-    src: url(fontes/Gistesy.ttf);
-}
 .container img{
     width: 100%;
     background: var(--branco);
 }
 .nav{
-    border: 1px solid black;
+    display: none;
+}
+.mobile_menu{
+    display: none;
+}
+.mobile_menu .nav_list{
+    display: flex;
+    justify-content: center;
+    background-color: var(--bege);
+}
+.mobile_menu ul{
+    list-style: none;
+    font-family: 'custom', sans-serif;
+}
+.mobile_menu li{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.mobile_menu a{
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--marrom);
+}
+.mobile_menu_icon{
+    width: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    background-color: var(--bege);
+}
+.mobile_menu_icon button{
+    width: 4rem;
+}
+.open{
+    display: block;
 }
 .main{
     border: 1px solid black;
@@ -97,12 +133,51 @@
         grid-row-start: 5;
         grid-row-end: 6;
     }
+    .mobile_menu{
+        display: none;
+    }
+    .nav{
+        display: block;
+    }
+    .mobile_menu_icon{
+        display: none;
+    }
     .nav{
         border: 1px solid black;
+        background-color: var(--bege);
         grid-column-start: 1;
         grid-column-end: 3;
         grid-row-start: 3;
         grid-row-end: 4;
+    }
+    .nav_list{
+        display: flex;
+        justify-content: center;
+    }
+    .nav_list ul{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+    .nav .nav_list li{
+        box-sizing: border-box;
+        /* placehoder */
+        background-color: var(--verde);
+        box-shadow: -10px 10px var(--branco);
+        /* plceholder */
+        border-radius: 100%;
+        padding: 30px;
+    }
+    .nav_item{
+        margin: 20px;
+        display: block;
+    }
+    .nav a{
+        font-family: 'custom', sans-serif;
+        text-decoration: none;
+        font-size: 2rem;
+        color: var(--marrom);
+        font-weight: 400;
     }
     .main{
         border: 1px solid black;
